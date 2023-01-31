@@ -1,0 +1,10 @@
+#!/command/with-contenv bashio
+# shellcheck shell=bash
+# ==============================================================================
+# Home Assistant Add-on: FreshRSS
+# Runs Refresh script
+# ==============================================================================
+
+bashio::log.info "Starting Refresh..."
+
+exec /usr/bin/refresh.sh

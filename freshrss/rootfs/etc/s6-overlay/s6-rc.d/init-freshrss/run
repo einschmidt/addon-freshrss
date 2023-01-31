@@ -1,0 +1,24 @@
+#!/usr/bin/with-contenv bashio
+# shellcheck shell=bash
+# ==============================================================================
+# Home Assistant Add-on: FreshRSS
+# Init freshrss
+# ==============================================================================
+
+# Setup data directory
+if ! bashio::fs.directory_exists "/data/freshrss"; then
+    bashio::log.debug 'Data directory not initialized, doing that now...'
+
+    # Setup structure
+    cp -R /usr/share/freshrss/data /data/freshrss
+    chown nginx:nginx -R /data/freshrss
+fi
+
+# Set base URL
+if ! bashio::fs.file_exists "/data/freshrss/config.php"; then
+    bashio::log.debug 'Set URL on custom config file...'
+    sed -r -i "\\base_url#s#^.*#\t'base_url' => '$(bashio::config 'base_url')',#" /usr/share/freshrss/config.default.php
+else
+    bashio::log.debug 'Set URL on config file...'
+    sed -r -i "\\base_url#s#^.*#\t'base_url' => '$(bashio::config 'base_url')',#" /data/freshrss/config.php
+fi
