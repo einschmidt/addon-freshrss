@@ -19,10 +19,10 @@ init: false
 map:
   - ssl
 options:
+  base_url: ""
   ssl: false
   certfile: fullchain.pem
   keyfile: privkey.pem
-  base_url: ""
 schema:
   log_level: list(trace|debug|info|notice|warning|error|fatal)?
   ssl: bool
