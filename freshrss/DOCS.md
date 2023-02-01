@@ -44,6 +44,10 @@ more severe level, e.g., `debug` also shows `info` messages. By default,
 the `log_level` is set to `info`, which is the recommended setting unless
 you are troubleshooting.
 
+### Option: `base_url``
+
+Address at which the FreshRSS instance will be reachable.
+
 ### Option: `ssl`
 
 Enables/Disables SSL (HTTPS) on the web interface of yarr!
