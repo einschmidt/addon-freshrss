@@ -1,4 +1,4 @@
-# Home Assistant Add-on: freshrss
+# Home Assistant Add-on: FreshRSS
 
 A free, self-hostable feed aggregator.
 
