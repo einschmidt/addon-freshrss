@@ -30,7 +30,9 @@ RUN \
     && sed -r -i "\\#disable_update#s#^.*#\t'disable_update' => true,#" \
         /usr/share/freshrss/config.default.php \
     \
-    && rm -f -r /etc/nginx \
+    && rm -f -r \
+        /etc/nginx \
+        /etc/php8/php-fpm.d/www.conf \
     \
     && apk del --no-cache --purge \
         .build-dependencies
