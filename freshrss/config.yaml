@@ -3,7 +3,7 @@ name: freshrss
 version: dev
 slug: freshrss
 description: freshrss description
-url: "https://github.com/einschmidt/addon-yarr"
+url: "https://github.com/einschmidt/addon-freshrss"
 panel_icon: "mdi:rss-box"
 arch:
   - i386
