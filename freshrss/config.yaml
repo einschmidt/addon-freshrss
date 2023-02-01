@@ -2,7 +2,7 @@
 name: freshrss
 version: dev
 slug: freshrss
-description: freshrss description
+description: A free, self-hostable feed aggregator
 url: "https://github.com/einschmidt/addon-freshrss"
 panel_icon: "mdi:rss-box"
 arch:
