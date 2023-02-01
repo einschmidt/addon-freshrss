@@ -4,3 +4,4 @@ build_from:
   armhf: "ghcr.io/hassio-addons/base/armhf:13.1.1"
   armv7: "ghcr.io/hassio-addons/base/armv7:13.1.1"
   aarch64: "ghcr.io/hassio-addons/base/aarch64:13.1.1"
+  i386: "ghcr.io/hassio-addons/base/i386:13.1.1"
