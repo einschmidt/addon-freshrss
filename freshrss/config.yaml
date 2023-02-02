@@ -1,5 +1,5 @@
 ---
-name: freshrss
+name: FreshRSS
 version: dev
 slug: freshrss
 description: A free, self-hostable feed aggregator
