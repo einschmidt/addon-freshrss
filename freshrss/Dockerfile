@@ -11,10 +11,10 @@ RUN \
     set -eux \
     \
     && apk add --no-cache --virtual .build-dependencies \
-        git=2.38.3-r1 \
+        git=2.38.4-r1 \
     \
     && apk add --no-cache \
-        tzdata \
+        tzdata=2022f-r1 \
         nginx=1.22.1-r0 \
         php81 php81-curl php81-gmp php81-intl php81-mbstring php81-xml php81-zip \
         php81-ctype php81-dom php81-fileinfo php81-iconv php81-json php81-opcache \
