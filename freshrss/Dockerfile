@@ -15,7 +15,7 @@ RUN \
     \
     && apk add --no-cache \
         tzdata=2023c-r1 \
-        nginx=1.24.0-r4 \
+        nginx=1.24.0-r5 \
         php81 php81-curl php81-gmp php81-intl php81-mbstring php81-xml php81-zip \
         php81-ctype php81-dom php81-fileinfo php81-iconv php81-json php81-opcache \
         php81-openssl php81-phar php81-session php81-simplexml php81-xmlreader \
