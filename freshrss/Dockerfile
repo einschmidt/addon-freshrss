@@ -11,7 +11,7 @@ RUN \
     set -eux \
     \
     && apk add --no-cache --virtual .build-dependencies \
-        git=2.40.1-r0 \
+        git=2.43.0-r0 \
     \
     && apk add --no-cache \
         tzdata=2023c-r1 \
