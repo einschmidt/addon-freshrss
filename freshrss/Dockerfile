@@ -14,7 +14,7 @@ RUN \
         git=2.43.0-r0 \
     \
     && apk add --no-cache \
-        tzdata=2023c-r1 \
+        tzdata=2023d-r0 \
         nginx=1.24.0-r14 \
         php81 php81-curl php81-gmp php81-intl php81-mbstring php81-xml php81-zip \
         php81-ctype php81-dom php81-fileinfo php81-iconv php81-json php81-opcache \
