@@ -5,9 +5,10 @@ FROM $BUILD_FROM
 # Set shell
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
+ARG FRESHRSS_VERSION="1.23.1"
+
 # Setup base
 # hadolint ignore=DL3003,DL3018
-ARG FRESHRSS_VERSION="1.23.1"
 RUN \
     set -eux \
     \
