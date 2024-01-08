@@ -7,6 +7,7 @@ SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 # Setup base
 # hadolint ignore=DL3003,DL3018
+ARG FRESHRSS_VERSION="1.22.1"
 RUN \
     set -eux \
     \
@@ -22,7 +23,7 @@ RUN \
         php81-xmlwriter php81-xml php81-tokenizer php81-zlib php81-fpm \
         php81-pdo_sqlite php81-pdo_mysql php81-pdo_pgsql \
     \
-    && git clone --branch "1.22.1" --depth=1 \
+    && git clone --branch "$FRESHRSS_VERSION" --depth=1 \
         "https://github.com/FreshRSS/FreshRSS.git" /usr/share/freshrss \
     \
     # Disable built-in updates when using Docker, as the full image is supposed
