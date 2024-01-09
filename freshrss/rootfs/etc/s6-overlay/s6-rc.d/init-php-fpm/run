@@ -4,7 +4,6 @@
 # Home Assistant Add-on: FreshRSS
 # Configures PHP-FPM for use with FreshRSS
 # ==============================================================================
-
 # Generate Ingress configuration
 # bashio::var.json \
 #     name "ingress" \
@@ -13,16 +12,12 @@
 #     | tempio \
 #         -template /etc/php81/templates/php-fpm.gtpl \
 #         -out /etc/php81/php-fpm.d/ingress.conf
-
-# Find the PHP installation folder
-PHP_FOLDER=$(find /usr/bin -name 'php*' -type f -executable -print -quit | xargs dirname)
-
 # Generate direct access configuration, if enabled.
 if bashio::var.has_value "$(bashio::addon.port 80)"; then
     bashio::var.json \
         name "www" \
         port "^9001" \
         | tempio \
-            -template "${PHP_FOLDER}/templates/php-fpm.gtpl" \
-            -out "${PHP_FOLDER}/php-fpm.d/www.conf"
+            -template /etc/php82/templates/php-fpm.gtpl \
+            -out /etc/php82/php-fpm.d/www.conf
 fi

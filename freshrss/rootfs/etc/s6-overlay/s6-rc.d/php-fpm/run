@@ -4,6 +4,6 @@
 # Home Assistant Add-on: FreshRSS
 # Runs the PHP-FPM daemon
 # ==============================================================================
-bashio::log.info "Starting PHP-FPM..."
 
-exec php-fpm -R --nodaemonize
+# Execute PHP-FPM
+exec php-fpm82 -R --nodaemonize
