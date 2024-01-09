@@ -6,4 +6,4 @@
 # ==============================================================================
 bashio::log.info "Starting PHP-FPM..."
 
-exec php-fpm81 -R --nodaemonize
+exec php-fpm -R --nodaemonize

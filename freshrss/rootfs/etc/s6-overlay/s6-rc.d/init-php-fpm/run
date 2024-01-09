@@ -20,6 +20,6 @@ if bashio::var.has_value "$(bashio::addon.port 80)"; then
         name "www" \
         port "^9001" \
         | tempio \
-            -template /etc/php81/templates/php-fpm.gtpl \
-            -out /etc/php81/php-fpm.d/www.conf
+            -template /etc/php/templates/php-fpm.gtpl \
+            -out /etc/php/php-fpm.d/www.conf
 fi
