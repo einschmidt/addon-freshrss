@@ -17,7 +17,7 @@ RUN \
     \
     && apk add --no-cache \
         tzdata=2023d-r0 \
-        nginx=1.24.0-r14 \
+        nginx=1.24.0-r15 \
         php php-curl php-gmp php-intl php-mbstring php-xml php-zip \
         php-ctype php-dom php-fileinfo php-iconv php-json php-opcache \
         php-openssl php-phar php-session php-simplexml php-xmlreader \
