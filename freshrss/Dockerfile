@@ -18,11 +18,11 @@ RUN \
     && apk add --no-cache \
         tzdata=2024b-r1 \
         nginx=1.26.2-r3 \
-        php php-curl php-gmp php-intl php-mbstring php-xml php-zip \
-        php-ctype php-dom php-fileinfo php-iconv php-json php-opcache \
-        php-openssl php-phar php-session php-simplexml php-xmlreader \
-        php-xmlwriter php-xml php-tokenizer php-zlib php-fpm\
-        php-pdo_sqlite php-pdo_mysql php-pdo_pgsql \
+        php83 php83-curl php83-gmp php83-intl php83-mbstring php83-xml php83-zip \
+        php83-ctype php83-dom php83-fileinfo php83-iconv php83-json php83-opcache \
+        php83-openssl php83-phar php83-session php83-simplexml php83-xmlreader \
+        php83-xmlwriter php83-tokenizer php83-zlib php83-fpm \
+        php83-pdo_sqlite php83-pdo_mysql php83-pdo_pgsql \
     \
     && git clone --branch "$FRESHRSS_VERSION" --depth=1 \
         "https://github.com/FreshRSS/FreshRSS.git" /usr/share/freshrss \
