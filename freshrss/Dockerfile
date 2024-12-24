@@ -22,7 +22,7 @@ RUN \
         php83-ctype php83-dom php83-fileinfo php83-iconv php83-json php83-opcache \
         php83-openssl php83-phar php83-session php83-simplexml php83-xmlreader \
         php83-xmlwriter php83-tokenizer php83-zlib php83-fpm \
-        php83-pdo_sqlite php83-pdo_mysql php83-pdo_pgsql
+        php83-pdo_sqlite php83-pdo_mysql php83-pdo_pgsql \
     \
     && git clone --branch "$FRESHRSS_VERSION" --depth=1 \
         "https://github.com/FreshRSS/FreshRSS.git" /usr/share/freshrss \
