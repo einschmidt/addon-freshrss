@@ -13,13 +13,13 @@ RUN \
     set -eux \
     \
     && apk add --no-cache --virtual .build-dependencies \
-        git=2.45.2-r0 \
+        git=2.47.1-r0 \
     \
     && apk add --no-cache \
-        tzdata=2024b-r0 \
+        tzdata=2024b-r1 \
         nginx=1.26.2-r3 \
-        php8.3 php8.3-curl php8.3-gmp php8.3-intl php8.3-mbstring php8.3-xml php8.3-zip \
-        php8.3-ctype php8.3-dom php8.3-fileinfo php8.3-iconv php8.3-json php8.3-opcache \
+        php php-curl php-gmp php-intl php-mbstring php-xml php-zip \
+        php-ctype php-dom php-fileinfo php-iconv php-json php-opcache \
         php8.3-openssl php8.3-phar php8.3-session php8.3-simplexml php8.3-xmlreader \
         php8.3-xmlwriter php8.3-tokenizer php8.3-zlib php8.3-fpm \
         php8.3-pdo_sqlite php8.3-pdo_mysql php8.3-pdo_pgsql \
