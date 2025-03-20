@@ -17,7 +17,9 @@ ports_description:
   80/tcp: Web interface
 init: false
 map:
-  - ssl
+  - type: ssl
+  - type: addon_config
+    read_only: false
 options:
   base_url: ""
   ssl: false
