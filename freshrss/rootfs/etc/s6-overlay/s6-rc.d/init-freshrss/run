@@ -22,3 +22,17 @@ else
     bashio::log.debug 'Set URL on config file...'
     sed -r -i "\\base_url#s#^.*#\t'base_url' => '$(bashio::config 'base_url')',#" /data/freshrss/config.php
 fi
+
+# Ensure /config/extensions exists
+if ! bashio::fs.directory_exists "/config/extensions"; then
+    bashio::log.debug 'Creating /config/extensions directory...'
+    mkdir -p /config/extensions
+    chown nginx:nginx /config/extensions
+
+    # Copy existing FreshRSS extensions (if available)
+    if [ -d "/usr/share/freshrss/extensions" ]; then
+        bashio::log.debug 'Copying default FreshRSS extensions to /config/extensions...'
+        cp -Rn /usr/share/freshrss/extensions/* /config/extensions/
+        chown -R nginx:nginx /config/extensions
+    fi
+fi
