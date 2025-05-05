@@ -5,7 +5,7 @@ FROM $BUILD_FROM
 # Set shell
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
-ARG FRESHRSS_VERSION="1.26.1"
+ARG FRESHRSS_VERSION="1.26.2"
 
 # Setup base
 # hadolint ignore=DL3003,DL3018
