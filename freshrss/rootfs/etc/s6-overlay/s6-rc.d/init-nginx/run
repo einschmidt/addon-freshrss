@@ -6,11 +6,21 @@
 # ==============================================================================
 
 # Generate Ingress PHP-FPM configuration
-# bashio::var.json \
-#     interface "$(bashio::addon.ip_address)" \
-#     | tempio \
-#         -template /etc/nginx/templates/ingress.gtpl \
-#         -out /etc/nginx/servers/ingress.conf
+INTERFACE=$(bashio::addon.ip_address)
+INGRESS_PATH=$(bashio::addon.ingress_entry)
+INGRESS_PORT=$(bashio::addon.ingress_port)
+
+bashio::log.debug "Using interface: ${INTERFACE}"
+bashio::log.debug "Using ingress path: ${INGRESS_PATH}"
+bashio::log.debug "Using ingress port: ${INGRESS_PORT}"
+
+bashio::var.json \
+    interface "${INTERFACE}" \
+    ingress_path "${INGRESS_PATH}" \
+    ingress_port "${INGRESS_PORT}" \
+    | tempio \
+        -template /etc/nginx/templates/ingress.gtpl \
+        -out /etc/nginx/servers/ingress.conf
 
 # Generate direct access configuration, if enabled.
 if bashio::var.has_value "$(bashio::addon.port 80)"; then
