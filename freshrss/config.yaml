@@ -1,6 +1,6 @@
 ---
 name: FreshRSS
-version: 16
+version: dev
 slug: freshrss
 description: A free, self-hostable feed aggregator
 url: "https://github.com/einschmidt/addon-freshrss"

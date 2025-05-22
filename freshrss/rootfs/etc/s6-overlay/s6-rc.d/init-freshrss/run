@@ -15,7 +15,8 @@ if ! bashio::fs.directory_exists "/data/freshrss"; then
 fi
 
 # Set base URL
-bashio::log.debug "base_url value: '$(bashio::config 'base_url')'"
+#bashio::log.debug "base_url value: '$(bashio::config 'base_url')'"
+bashio::log.debug "base_url value: '$(bashio::config 'base_url')$(bashio::addon.ingress_url)'"
 
 if ! bashio::fs.file_exists "/data/freshrss/config.php"; then
     bashio::log.debug 'Config file not found. Using default config.'
@@ -23,7 +24,8 @@ if ! bashio::fs.file_exists "/data/freshrss/config.php"; then
     bashio::log.debug "$(grep base_url /usr/share/freshrss/config.default.php)"
 
     bashio::log.debug 'Setting URL in default config file...'
-    sed -i -E "s|('base_url'\s*=>\s*)'[^']*'|\1'$(bashio::config 'base_url')'|" /usr/share/freshrss/config.default.php
+    #sed -i -E "s|('base_url'\s*=>\s*)'[^']*'|\1'$(bashio::config 'base_url')'|" /usr/share/freshrss/config.default.php
+    sed -i -E "s|('base_url'\s*=>\s*)'[^']*'|\1'$(bashio::config 'base_url')$(bashio::addon.ingress_url)'|" /usr/share/freshrss/config.default.php
 
     bashio::log.debug 'After modification of /usr/share/freshrss/config.default.php:'
     bashio::log.debug "$(grep base_url /usr/share/freshrss/config.default.php)"
@@ -33,7 +35,8 @@ else
     bashio::log.debug "$(grep base_url /data/freshrss/config.php)"
 
     bashio::log.debug 'Setting URL in existing config file...'
-    sed -i -E "s|('base_url'\s*=>\s*)'[^']*'|\1'$(bashio::config 'base_url')'|" /data/freshrss/config.php
+    #sed -i -E "s|('base_url'\s*=>\s*)'[^']*'|\1'$(bashio::config 'base_url')'|" /data/freshrss/config.php
+    sed -i -E "s|('base_url'\s*=>\s*)'[^']*'|\1'$(bashio::config 'base_url')$(bashio::addon.ingress_url)'|" /data/freshrss/config.php
 
     bashio::log.debug 'After modification of /data/freshrss/config.php:'
     bashio::log.debug "$(grep base_url /data/freshrss/config.php)"

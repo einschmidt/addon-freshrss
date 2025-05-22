@@ -9,15 +9,18 @@
 INTERFACE=$(bashio::addon.ip_address)
 INGRESS_PATH=$(bashio::addon.ingress_entry)
 INGRESS_PORT=$(bashio::addon.ingress_port)
+INGRESS_URL=$(bashio::addon.ingress_url)
 
 bashio::log.debug "Using interface: ${INTERFACE}"
 bashio::log.debug "Using ingress path: ${INGRESS_PATH}"
 bashio::log.debug "Using ingress port: ${INGRESS_PORT}"
+bashio::log.debug "Using ingress url: ${INGRESS_URL}"
 
 bashio::var.json \
     interface "${INTERFACE}" \
     ingress_path "${INGRESS_PATH}" \
     ingress_port "${INGRESS_PORT}" \
+    ingress_url "${INGRESS_URL}" \
     | tempio \
         -template /etc/nginx/templates/ingress.gtpl \
         -out /etc/nginx/servers/ingress.conf
